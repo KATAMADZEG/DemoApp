@@ -99,10 +99,10 @@
 				DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */,
 				DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */,
 				DAB3A21229A0B3860043DDE9 /* ViewController.swift */,
+				DAB3A22A29A0BBC50043DDE9 /* View */,
+				DAC5358E29A0C7F0006362F4 /* Controllers */,
 				DAB3A23229A0C02C0043DDE9 /* API */,
 				DAB3A22F29A0BED30043DDE9 /* Utils */,
-				DAB3A22A29A0BBC50043DDE9 /* View */,
-				DAB3A22429A0BB730043DDE9 /* Authorization */,
 				DAB3A21429A0B3860043DDE9 /* Main.storyboard */,
 				DAB3A21729A0B3880043DDE9 /* Assets.xcassets */,
 				DAB3A21929A0B3880043DDE9 /* LaunchScreen.storyboard */,
@@ -153,6 +153,14 @@
 				DAB3A23329A0C0380043DDE9 /* AuthService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		DAC5358E29A0C7F0006362F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A22429A0BB730043DDE9 /* Authorization */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

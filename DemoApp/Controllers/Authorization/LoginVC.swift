@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
     
 
     private let iconImage:UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
+        let iv = UIImageView()
         return iv
     }()
     private let mailTextField : UITextField = {
@@ -53,11 +53,13 @@ class LoginVC: UIViewController {
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
+    
     private let forgotPasswordBtn : UIButton = {
         let button = UIButton(type: .system)
-        button.attributedTitle(firstPart: " Forgot your password? ", secondPart: " Get help signing in")
+        button.attributedTitle(firstPart: "Forgot your password? ", secondPart: " Get help signing in")
         return button
     }()
+    
     //MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -70,7 +72,7 @@ class LoginVC: UIViewController {
         guard let email = mailTextField.text,
               let password = passwordTextField.text else {return}
         
-        AuthService.logUserIn(with: email, password: password) { result, error in
+        AuthService.logInUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -78,14 +80,16 @@ class LoginVC: UIViewController {
             self.delegate?.authenticationComplete()
             self.dismiss(animated: true, completion: nil)
         }
+        
     }
     @objc private func handleShowSignUp(){
-        let vc = RegistrationVc()
+        let vc = RegistrationVC()
         vc.delegate = delegate
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func textDidChange(sender:UITextField) {
+        print("\(sender.text) sender ext")
         if sender == mailTextField {
             viewModel.email = sender.text
         }else{
@@ -95,7 +99,6 @@ class LoginVC: UIViewController {
     }
     
     //MARK: - Helpers
-
     private func configureUI(){
         view.backgroundColor = .white
         navigationController?.navigationBar.barStyle = .black
@@ -130,6 +133,8 @@ class LoginVC: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
+
+//MARK: - FormViewModel
 extension LoginVC : FormViewModel {
     func updateForm() {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
