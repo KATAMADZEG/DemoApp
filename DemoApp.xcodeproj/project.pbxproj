@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B72F5E5FC48F1184E1F8A6B /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */; };
 		DAB3A20F29A0B3860043DDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */; };
 		DAB3A21129A0B3860043DDE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */; };
 		DAB3A21329A0B3860043DDE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A21229A0B3860043DDE9 /* ViewController.swift */; };
 		DAB3A21629A0B3860043DDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21429A0B3860043DDE9 /* Main.storyboard */; };
 		DAB3A21829A0B3880043DDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21729A0B3880043DDE9 /* Assets.xcassets */; };
 		DAB3A21B29A0B3880043DDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21929A0B3880043DDE9 /* LaunchScreen.storyboard */; };
+		DAB3A22329A0B95A0043DDE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */; };
+		DAB3A22629A0BB870043DDE9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22529A0BB870043DDE9 /* LoginVC.swift */; };
+		DAB3A22829A0BB950043DDE9 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22729A0BB950043DDE9 /* RegistrationVC.swift */; };
+		DAB3A22C29A0BBE40043DDE9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22B29A0BBE40043DDE9 /* CustomTextField.swift */; };
+		DAB3A22E29A0BC690043DDE9 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22D29A0BC690043DDE9 /* AuthenticationViewModel.swift */; };
+		DAB3A23129A0BEDE0043DDE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23029A0BEDE0043DDE9 /* Extensions.swift */; };
+		DAB3A23429A0C0380043DDE9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23329A0C0380043DDE9 /* AuthService.swift */; };
+		DAB3A23629A0C0870043DDE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23529A0C0870043DDE9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050825F57784A55B3DFE55B3 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01B719B003C46BC07D16E05 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DAB3A20B29A0B3860043DDE9 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +36,14 @@
 		DAB3A21729A0B3880043DDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB3A21A29A0B3880043DDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB3A21C29A0B3880043DDE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAB3A22529A0BB870043DDE9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DAB3A22729A0BB950043DDE9 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		DAB3A22B29A0BBE40043DDE9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DAB3A22D29A0BC690043DDE9 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		DAB3A23029A0BEDE0043DDE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DAB3A23329A0C0380043DDE9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DAB3A23529A0C0870043DDE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B72F5E5FC48F1184E1F8A6B /* Pods_DemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0018B11780C0A9AF294FC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D01B719B003C46BC07D16E05 /* Pods-DemoApp.debug.xcconfig */,
+				050825F57784A55B3DFE55B3 /* Pods-DemoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		69CB030E1BFAF3C8BD503934 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DAB3A20229A0B3860043DDE9 = {
 			isa = PBXGroup;
 			children = (
 				DAB3A20D29A0B3860043DDE9 /* DemoApp */,
 				DAB3A20C29A0B3860043DDE9 /* Products */,
+				5E0018B11780C0A9AF294FC3 /* Pods */,
+				69CB030E1BFAF3C8BD503934 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +99,60 @@
 				DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */,
 				DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */,
 				DAB3A21229A0B3860043DDE9 /* ViewController.swift */,
+				DAB3A23229A0C02C0043DDE9 /* API */,
+				DAB3A22F29A0BED30043DDE9 /* Utils */,
+				DAB3A22A29A0BBC50043DDE9 /* View */,
+				DAB3A22429A0BB730043DDE9 /* Authorization */,
 				DAB3A21429A0B3860043DDE9 /* Main.storyboard */,
 				DAB3A21729A0B3880043DDE9 /* Assets.xcassets */,
 				DAB3A21929A0B3880043DDE9 /* LaunchScreen.storyboard */,
+				DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */,
 				DAB3A21C29A0B3880043DDE9 /* Info.plist */,
 			);
 			path = DemoApp;
+			sourceTree = "<group>";
+		};
+		DAB3A22429A0BB730043DDE9 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A22929A0BB990043DDE9 /* ViewModel */,
+				DAB3A22529A0BB870043DDE9 /* LoginVC.swift */,
+				DAB3A22729A0BB950043DDE9 /* RegistrationVC.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DAB3A22929A0BB990043DDE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A22D29A0BC690043DDE9 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAB3A22A29A0BBC50043DDE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A22B29A0BBE40043DDE9 /* CustomTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAB3A22F29A0BED30043DDE9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A23029A0BEDE0043DDE9 /* Extensions.swift */,
+				DAB3A23529A0C0870043DDE9 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DAB3A23229A0C02C0043DDE9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DAB3A23329A0C0380043DDE9 /* AuthService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAB3A21F29A0B3880043DDE9 /* Build configuration list for PBXNativeTarget "DemoApp" */;
 			buildPhases = (
+				28BB121873E05763FB32EEF3 /* [CP] Check Pods Manifest.lock */,
 				DAB3A20729A0B3860043DDE9 /* Sources */,
 				DAB3A20829A0B3860043DDE9 /* Frameworks */,
 				DAB3A20929A0B3860043DDE9 /* Resources */,
+				856F81DC496E00A02B48B55C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +216,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB3A21B29A0B3880043DDE9 /* LaunchScreen.storyboard in Resources */,
+				DAB3A22329A0B95A0043DDE9 /* GoogleService-Info.plist in Resources */,
 				DAB3A21829A0B3880043DDE9 /* Assets.xcassets in Resources */,
 				DAB3A21629A0B3860043DDE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28BB121873E05763FB32EEF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		856F81DC496E00A02B48B55C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAB3A20729A0B3860043DDE9 /* Sources */ = {
@@ -140,6 +273,13 @@
 			files = (
 				DAB3A21329A0B3860043DDE9 /* ViewController.swift in Sources */,
 				DAB3A20F29A0B3860043DDE9 /* AppDelegate.swift in Sources */,
+				DAB3A22E29A0BC690043DDE9 /* AuthenticationViewModel.swift in Sources */,
+				DAB3A23429A0C0380043DDE9 /* AuthService.swift in Sources */,
+				DAB3A23129A0BEDE0043DDE9 /* Extensions.swift in Sources */,
+				DAB3A23629A0C0870043DDE9 /* Constants.swift in Sources */,
+				DAB3A22C29A0BBE40043DDE9 /* CustomTextField.swift in Sources */,
+				DAB3A22629A0BB870043DDE9 /* LoginVC.swift in Sources */,
+				DAB3A22829A0BB950043DDE9 /* RegistrationVC.swift in Sources */,
 				DAB3A21129A0B3860043DDE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +424,7 @@
 		};
 		DAB3A22029A0B3880043DDE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01B719B003C46BC07D16E05 /* Pods-DemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +453,7 @@
 		};
 		DAB3A22129A0B3880043DDE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 050825F57784A55B3DFE55B3 /* Pods-DemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
