@@ -9,8 +9,8 @@ target 'DemoApp' do
 
 pod 'SnapKit'
 pod 'SDWebImage'
-pod 'FirebaseAuth'
+pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
+pod 'FirebaseAuth'
 pod 'Firebase/Firestore'
-
 end

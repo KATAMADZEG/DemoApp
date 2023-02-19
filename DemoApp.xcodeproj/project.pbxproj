@@ -14,7 +14,6 @@
 		DAB3A21629A0B3860043DDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21429A0B3860043DDE9 /* Main.storyboard */; };
 		DAB3A21829A0B3880043DDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21729A0B3880043DDE9 /* Assets.xcassets */; };
 		DAB3A21B29A0B3880043DDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A21929A0B3880043DDE9 /* LaunchScreen.storyboard */; };
-		DAB3A22329A0B95A0043DDE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */; };
 		DAB3A22629A0BB870043DDE9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22529A0BB870043DDE9 /* LoginVC.swift */; };
 		DAB3A22829A0BB950043DDE9 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22729A0BB950043DDE9 /* RegistrationVC.swift */; };
 		DAB3A22C29A0BBE40043DDE9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A22B29A0BBE40043DDE9 /* CustomTextField.swift */; };
@@ -22,6 +21,7 @@
 		DAB3A23129A0BEDE0043DDE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23029A0BEDE0043DDE9 /* Extensions.swift */; };
 		DAB3A23429A0C0380043DDE9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23329A0C0380043DDE9 /* AuthService.swift */; };
 		DAB3A23629A0C0870043DDE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A23529A0C0870043DDE9 /* Constants.swift */; };
+		DAE6C8FF29A2620400A85A8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAE6C8FE29A2620300A85A8B /* GoogleService-Info.plist */; };
 		DAF1CAE629A21CA0004ED218 /* MainPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1CAE529A21CA0004ED218 /* MainPageCell.swift */; };
 		DAF1CAE929A22390004ED218 /* ImageDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1CAE829A22390004ED218 /* ImageDetailVC.swift */; };
 		DAF1CAED29A225A0004ED218 /* ImageDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1CAEC29A225A0004ED218 /* ImageDetailCell.swift */; };
@@ -39,7 +39,6 @@
 		DAB3A21729A0B3880043DDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB3A21A29A0B3880043DDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB3A21C29A0B3880043DDE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAB3A22529A0BB870043DDE9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DAB3A22729A0BB950043DDE9 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		DAB3A22B29A0BBE40043DDE9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		DAB3A23029A0BEDE0043DDE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DAB3A23329A0C0380043DDE9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DAB3A23529A0C0870043DDE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DAE6C8FE29A2620300A85A8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAF1CAE529A21CA0004ED218 /* MainPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCell.swift; sourceTree = "<group>"; };
 		DAF1CAE829A22390004ED218 /* ImageDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailVC.swift; sourceTree = "<group>"; };
 		DAF1CAEC29A225A0004ED218 /* ImageDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailCell.swift; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 				DAB3A21429A0B3860043DDE9 /* Main.storyboard */,
 				DAB3A21729A0B3880043DDE9 /* Assets.xcassets */,
 				DAB3A21929A0B3880043DDE9 /* LaunchScreen.storyboard */,
-				DAB3A22229A0B95A0043DDE9 /* GoogleService-Info.plist */,
 				DAB3A21C29A0B3880043DDE9 /* Info.plist */,
+				DAE6C8FE29A2620300A85A8B /* GoogleService-Info.plist */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -200,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				DAF1CAEA29A22403004ED218 /* View */,
-				DAF1CAEB29A22409004ED218 /* ViewModel */,
 			);
 			path = ImageDetail;
 			sourceTree = "<group>";
@@ -211,13 +210,6 @@
 				DAF1CAEC29A225A0004ED218 /* ImageDetailCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DAF1CAEB29A22409004ED218 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +258,8 @@
 				Base,
 			);
 			mainGroup = DAB3A20229A0B3860043DDE9;
+			packageReferences = (
+			);
 			productRefGroup = DAB3A20C29A0B3860043DDE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,9 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB3A21B29A0B3880043DDE9 /* LaunchScreen.storyboard in Resources */,
-				DAB3A22329A0B95A0043DDE9 /* GoogleService-Info.plist in Resources */,
 				DAB3A21829A0B3880043DDE9 /* Assets.xcassets in Resources */,
 				DAB3A21629A0B3860043DDE9 /* Main.storyboard in Resources */,
+				DAE6C8FF29A2620400A85A8B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

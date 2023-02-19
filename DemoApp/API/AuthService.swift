@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
+//import FirebaseAuth
+//import Firebase
 
 struct AuthCredentials {
     let email           :String
@@ -24,9 +24,11 @@ struct AuthService {
     }
     
     static func registerUser(withCredential:AuthCredentials,complition:@escaping (Error?) -> Void){
+        
         Auth.auth().createUser(withEmail: withCredential.email, password: withCredential.password) { result, error in
             if let error = error {
                 print(error.localizedDescription)
+                
                 return
             }
             guard let uid = result?.user.uid else {return}

@@ -30,9 +30,10 @@ class RegistrationVC: UIViewController {
     private lazy var signUpButton : UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.white.withAlphaComponent(0.67), for: .normal)
         button.layer.cornerRadius = 5
-        button.backgroundColor = .purple
+        button.backgroundColor = .clear
+        
         button.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
@@ -53,6 +54,7 @@ class RegistrationVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureNotificationObserver()
+        viewModel.outputs = self
     }
     //MARK: - Actions
     @objc private func handleSignUpBtn() {
@@ -61,30 +63,22 @@ class RegistrationVC: UIViewController {
               let password  = passwordTextField.text,
               let age = ageTextField.text
         else {return}
-        let credential = AuthCredentials(email: email, password: password, age: age)
         
-        AuthService.registerUser(withCredential: credential) { error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.delegate?.authenticationComplete()
-        }
+        let credential = AuthCredentials(email: email, password: password, age: age)
+        viewModel.inputs.registerUser(with: credential)
     }
     
     @objc private func handleBackLoginPage(){
         navigationController?.popViewController(animated: true)
     }
     @objc private func textDidChange(sender:UITextField){
-        switch true {
-        case sender == mailTextField:
+        print("\(sender.text) sadas")
+        if sender == mailTextField {
             viewModel.email = sender.text
-        case sender == passwordTextField:
+        }else if sender == passwordTextField {
             viewModel.password = sender.text
-        case sender == ageTextField:
+        }else{
             viewModel.age = sender.text
-        default:
-            break
         }
         updateForm()
     }
@@ -119,7 +113,19 @@ class RegistrationVC: UIViewController {
 extension RegistrationVC : FormViewModel {
     func updateForm() {
         signUpButton.backgroundColor = viewModel.buttonBackgroundColor
-        signUpButton.titleLabel?.textColor = viewModel.buttonTitleColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+//MARK: - RegistrationViewModelOutputs
+extension RegistrationVC : RegistrationViewModelOutputs {
+    func userRegistrationResponse(error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        self.delegate?.authenticationComplete()
     }
 }

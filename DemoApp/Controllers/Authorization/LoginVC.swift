@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import Firebase
 
 protocol AuthenticationDelegate: AnyObject {
     func authenticationComplete()
@@ -19,7 +20,11 @@ class LoginVC: UIViewController {
     
     weak var delegate:AuthenticationDelegate?
     
+    
+    
+    private lazy var tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
 
+    
     private let iconImage:UIImageView = {
         let iv = UIImageView()
         return iv
@@ -33,7 +38,7 @@ class LoginVC: UIViewController {
         tf.isSecureTextEntry = true
         return tf
     }()
-    private let loginButton : UIButton = {
+    private lazy var loginButton : UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(UIColor.white.withAlphaComponent(0.67), for: .normal)
@@ -47,18 +52,13 @@ class LoginVC: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
-    private let dontHaveAccButton : UIButton = {
+    private lazy var dontHaveAccButton : UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Don't have an account" , secondPart: " Sign Up")
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
     
-    private let forgotPasswordBtn : UIButton = {
-        let button = UIButton(type: .system)
-        button.attributedTitle(firstPart: "Forgot your password? ", secondPart: " Get help signing in")
-        return button
-    }()
     
     //MARK: - LifeCycle
 
@@ -66,21 +66,20 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureNotificationObserver()
+        viewModel.outputs  = self
+        self.view.addGestureRecognizer(tap)
+        
     }
     //MARK: - Actions
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.view.endEditing(true)
+    }
+    
     @objc private func handleLogIn() {
         guard let email = mailTextField.text,
               let password = passwordTextField.text else {return}
-        
-        AuthService.logInUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.delegate?.authenticationComplete()
-            self.dismiss(animated: true, completion: nil)
-        }
-        
+        viewModel.inputs.logIn(with: email, with: password)
     }
     @objc private func handleShowSignUp(){
         let vc = RegistrationVC()
@@ -89,7 +88,6 @@ class LoginVC: UIViewController {
     }
     
     @objc private func textDidChange(sender:UITextField) {
-        print("\(sender.text) sender ext")
         if sender == mailTextField {
             viewModel.email = sender.text
         }else{
@@ -112,7 +110,7 @@ class LoginVC: UIViewController {
             make.width.equalTo(200)
         }
         
-        let stackView = UIStackView(arrangedSubviews: [mailTextField,passwordTextField,loginButton,forgotPasswordBtn])
+        let stackView = UIStackView(arrangedSubviews: [mailTextField,passwordTextField,loginButton])
         stackView.axis = .vertical
         stackView.spacing = 20
         view.addSubview(stackView)
@@ -138,7 +136,20 @@ class LoginVC: UIViewController {
 extension LoginVC : FormViewModel {
     func updateForm() {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
-        loginButton.titleLabel?.textColor = viewModel.buttonTitleColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         loginButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+//MARK: - LoginViewModelOutputs
+extension LoginVC : LoginViewModelOutputs {
+    func userLogInResponse(result: AuthDataResult?,error:Error?) {
+        
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        self.delegate?.authenticationComplete()
+        self.dismiss(animated: true, completion: nil)
     }
 }
