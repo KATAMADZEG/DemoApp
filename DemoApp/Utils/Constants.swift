@@ -6,11 +6,11 @@
 //
 
 import UIKit
-//import Firebase
-//import FirebaseAnalytics
+import Firebase
+import FirebaseAnalytics
 
 let screenHeight = UIScreen.main.bounds.height
 let screenWidth = UIScreen.main.bounds.width
 
-//let COLLECATION_USERS = Firestore.firestore().collection("users")
+let COLLECATION_USERS = Firestore.firestore().collection("users")
 

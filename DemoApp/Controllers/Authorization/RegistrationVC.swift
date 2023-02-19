@@ -6,26 +6,47 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationVC: UIViewController {
 
     //MARK: - Properties
     private var viewModel = RegistrationViewModel()
     private var profileImage : UIImage?
-    weak var delegate : AuthenticationDelegate?
     
     
     private let mailTextField : UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         return tf
     }()
+
+    private let ageTextField = CustomTextField(placeholder: "Age",keyboardType: .numberPad)
+    
+    
+    private let passwordErrorLabel : UILabel = {
+        let label = UILabel()
+     
+        return label
+    }()
+    
+    private let mailErrorLabel : UILabel = {
+        let label = UILabel()
+       
+        return label
+    }()
+    
+    private let ageErroLabel : UILabel = {
+        let label = UILabel()
+     
+        return label
+    }()
+    
     private let passwordTextField : UITextField = {
         let tf = CustomTextField(placeholder: "Password")
+        
         tf.isSecureTextEntry = true
         return tf
     }()
-    private let ageTextField = CustomTextField(placeholder: "Age")
-    
     
     private lazy var signUpButton : UIButton = {
         let button = UIButton(type: .system)
@@ -59,12 +80,28 @@ class RegistrationVC: UIViewController {
     //MARK: - Actions
     @objc private func handleSignUpBtn() {
         
+        if !viewModel.mailIsValid! {
+            mailErrorLabel.text = "ელ.ფოსტა არ არის ვალიდური"
+            return
+        }
+        
+        if !viewModel.passwordIsVlid! {
+            passwordErrorLabel.text = "აკრიბეთ მინ. 6 და მაქ. 12 სიმბოლო"
+            return
+        }
+        
+        if !viewModel.ageIsValid! {
+            ageErroLabel.text = "ასაკი უნდა იყოს 18 დან 99 მდე"
+            return
+        }
+        
         guard let email = mailTextField.text,
               let password  = passwordTextField.text,
               let age = ageTextField.text
         else {return}
         
         let credential = AuthCredentials(email: email, password: password, age: age)
+        
         viewModel.inputs.registerUser(with: credential)
     }
     
@@ -88,9 +125,9 @@ class RegistrationVC: UIViewController {
     private func configureUI(){
         view.backgroundColor = .white
         configureGradientLayer()
-        let stackView = UIStackView(arrangedSubviews: [mailTextField,passwordTextField,ageTextField,signUpButton])
+        let stackView = UIStackView(arrangedSubviews: [mailTextField,mailErrorLabel,passwordTextField,passwordErrorLabel,ageTextField,ageErroLabel,signUpButton])
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = 10
         view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.top.equalTo(self.view.snp_topMargin).offset(32)
@@ -120,12 +157,14 @@ extension RegistrationVC : FormViewModel {
 
 //MARK: - RegistrationViewModelOutputs
 extension RegistrationVC : RegistrationViewModelOutputs {
-    func userRegistrationResponse(error: Error?) {
+    func userRegistrationResponse(result: AuthDataResult?, error: Error?) {
         if let error = error {
             print(error.localizedDescription)
             return
         }
         
-        self.delegate?.authenticationComplete()
+        let vc = MainPageVC()
+        self.view.window!.rootViewController = vc
+
     }
 }

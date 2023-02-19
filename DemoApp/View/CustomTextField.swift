@@ -10,7 +10,7 @@ import SnapKit
 
 class CustomTextField: UITextField {
 
-    init(placeholder: String) {
+    init(placeholder: String,keyboardType:UIKeyboardType? = nil) {
        super.init(frame: .zero)
        let spacer = UIView()
        spacer.snp.makeConstraints { make in
@@ -26,7 +26,7 @@ class CustomTextField: UITextField {
        borderStyle = .none
        textColor = .white
        keyboardAppearance = .dark
-       keyboardType = .emailAddress
+        self.keyboardType = keyboardType ?? .emailAddress
        backgroundColor = UIColor(white: 1, alpha: 0.1)
        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.8)])
    }

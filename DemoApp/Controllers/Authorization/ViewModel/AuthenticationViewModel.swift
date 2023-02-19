@@ -6,16 +6,20 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
 protocol  FormViewModel {
     func updateForm()
 }
 
 protocol AuthenticationViewModel {
-    var formIsValid : Bool { get  }
-    var buttonBackgroundColor : UIColor { get  }
-    var buttonTitleColor : UIColor { get  }
+    var formIsValid             : Bool {get}
+    var buttonBackgroundColor   : UIColor {get}
+    var buttonTitleColor        : UIColor {get}
+    var mailIsValid             : Bool? {get}
+    var passwordIsVlid          : Bool? {get}
+    var ageIsValid              : Bool? {get}
+
 }
 
 protocol LoginViewModelInputs {
@@ -38,7 +42,7 @@ protocol RegistrationViewModelInputs {
     func registerUser(with credential :AuthCredentials)
 }
 protocol RegistrationViewModelOutputs {
-    func userRegistrationResponse(error:Error?)
+    func userRegistrationResponse(result:AuthDataResult?,error:Error?)
 }
 protocol RegistrationViewModelModelType {
     var inputs: RegistrationViewModelInputs { get }
@@ -47,6 +51,16 @@ protocol RegistrationViewModelModelType {
 
 
 struct LoginViewModel:AuthenticationViewModel,LoginViewModelModelType {
+    var mailIsValid: Bool? {
+        return email?.isValidEmail()
+    }
+    
+    var passwordIsVlid: Bool? {
+        return  (password?.count ?? 0) > 5 &&  (password?.count ?? 0) < 13
+    }
+    
+    var ageIsValid: Bool? {return nil}
+    
     var inputs  : LoginViewModelInputs { return self }
     var outputs : LoginViewModelOutputs?
 
@@ -66,6 +80,18 @@ struct LoginViewModel:AuthenticationViewModel,LoginViewModelModelType {
 }
 
 struct RegistrationViewModel:AuthenticationViewModel,RegistrationViewModelModelType {
+    var mailIsValid: Bool? {
+        return email?.isValidEmail()
+    }
+    
+    var passwordIsVlid: Bool? {
+        return  (password?.count ?? 0) > 5 &&  (password?.count ?? 0) < 13
+    }
+    
+    var ageIsValid: Bool? {
+        return Int(age ?? "") ?? 0 > 18 && Int(age ?? "") ?? 0 < 99
+    }
+    
     var inputs: RegistrationViewModelInputs {self}
     var outputs: RegistrationViewModelOutputs?
     
@@ -104,9 +130,19 @@ extension RegistrationViewModel : RegistrationViewModelInputs {
     func registerUser(with credential: AuthCredentials) {
         
         print("register")
-        AuthService.registerUser(withCredential: credential) { error in
-            
-            self.outputs?.userRegistrationResponse(error: error)
+        AuthService.registerUser(withCredential: credential) { result,error  in
+                if let error = error {
+                    print(error.localizedDescription)
+                    
+                    return
+                }
+                guard let uid = result?.user.uid else {return}
+                let data : [String:Any] = ["email":credential.email,
+                                           "password":credential.password,
+                                           "age":credential.age,
+                                           "uid":uid]
+                COLLECATION_USERS.document(uid).setData(data, merge: true)
+                self.outputs?.userRegistrationResponse(result: result, error: error)
         }
     }
 }

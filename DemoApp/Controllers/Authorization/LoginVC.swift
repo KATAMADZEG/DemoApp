@@ -6,38 +6,43 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
-protocol AuthenticationDelegate: AnyObject {
-    func authenticationComplete()
-}
 
 class LoginVC: UIViewController {
+
 
     //MARK: - Properties
     
     private var viewModel = LoginViewModel()
     
-    weak var delegate:AuthenticationDelegate?
-    
-    
-    
     private lazy var tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
 
-    
-    private let iconImage:UIImageView = {
-        let iv = UIImageView()
-        return iv
-    }()
+
     private let mailTextField : UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         return tf
     }()
+    
+
+    private let passwordErrorLabel : UILabel = {
+        let label = UILabel()
+     
+        return label
+    }()
+    
+    private let mailErrorLabel : UILabel = {
+        let label = UILabel()
+       
+        return label
+    }()
+    
     private let passwordTextField : UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
+
     private lazy var loginButton : UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
@@ -79,11 +84,23 @@ class LoginVC: UIViewController {
     @objc private func handleLogIn() {
         guard let email = mailTextField.text,
               let password = passwordTextField.text else {return}
+        
+        if !viewModel.mailIsValid! {
+            mailErrorLabel.text = "ელ.ფოსტა არ არის ვალიდური"
+            return
+        }
+    
+        
+        if !viewModel.passwordIsVlid! {
+            passwordErrorLabel.text = "აკრიბეთ მინ. 6 და მაქ. 12 სიმბოლო"
+            return
+        }
+        
+
         viewModel.inputs.logIn(with: email, with: password)
     }
     @objc private func handleShowSignUp(){
         let vc = RegistrationVC()
-        vc.delegate = delegate
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -102,20 +119,12 @@ class LoginVC: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         configureGradientLayer()
         
-        view.addSubview(iconImage)
-        iconImage.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(-28)
-            make.height.equalTo(80)
-            make.width.equalTo(200)
-        }
-        
-        let stackView = UIStackView(arrangedSubviews: [mailTextField,passwordTextField,loginButton])
+        let stackView = UIStackView(arrangedSubviews: [mailTextField,mailErrorLabel,passwordTextField,passwordErrorLabel,loginButton])
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = 10
         view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(iconImage.snp_bottomMargin).offset(32)
+            make.top.equalTo(view.snp_topMargin).offset(100)
             make.left.equalTo(view.snp_leftMargin).inset(32)
             make.right.equalTo(view.snp_rightMargin).inset(32)
         }
@@ -149,7 +158,8 @@ extension LoginVC : LoginViewModelOutputs {
             print(error.localizedDescription)
             return
         }
-        self.delegate?.authenticationComplete()
-        self.dismiss(animated: true, completion: nil)
+        let vc = MainPageVC()
+        self.view.window!.rootViewController = vc
     }
 }
+

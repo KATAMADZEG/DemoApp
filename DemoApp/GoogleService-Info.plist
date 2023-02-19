@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>321641162610-d0qiudn9hrg5s6o3h5d3cq30h58cq02n.apps.googleusercontent.com</string>
+	<string>504955930731-sbuirs7tbmqohdss4ls64oqegm8rbo44.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.321641162610-d0qiudn9hrg5s6o3h5d3cq30h58cq02n</string>
+	<string>com.googleusercontent.apps.504955930731-sbuirs7tbmqohdss4ls64oqegm8rbo44</string>
 	<key>API_KEY</key>
-	<string>AIzaSyARA2i5wW2VVpdP2X1v2SqbI3JM81164qw</string>
+	<string>AIzaSyABKxFmD_YffRcktmT60Zgb6Y9jl9fKueQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>321641162610</string>
+	<string>504955930731</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.quti.DemoApp</string>
 	<key>PROJECT_ID</key>
-	<string>demoapp-d4e01</string>
+	<string>demoapp-ec999</string>
 	<key>STORAGE_BUCKET</key>
-	<string>demoapp-d4e01.appspot.com</string>
+	<string>demoapp-ec999.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:321641162610:ios:e8e5661f80c17f8d225feb</string>
+	<string>1:504955930731:ios:22f0ba21b80aafa57e092e</string>
 </dict>
 </plist>
