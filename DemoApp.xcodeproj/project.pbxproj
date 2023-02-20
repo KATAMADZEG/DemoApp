@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7B72F5E5FC48F1184E1F8A6B /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */; };
+		DAA7FD9A29A35A5D0021E76D /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FD9929A35A5D0021E76D /* MainPageModel.swift */; };
+		DAA7FD9D29A35BE80021E76D /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FD9C29A35BE80021E76D /* MainPageViewModel.swift */; };
+		DAA7FDA029A35D140021E76D /* PixabayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FD9F29A35D140021E76D /* PixabayService.swift */; };
+		DAA7FDA829A389630021E76D /* ImageDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDA729A389630021E76D /* ImageDetailModel.swift */; };
 		DAB3A20F29A0B3860043DDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */; };
 		DAB3A21129A0B3860043DDE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */; };
 		DAB3A21329A0B3860043DDE9 /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3A21229A0B3860043DDE9 /* MainPageVC.swift */; };
@@ -31,6 +35,10 @@
 		050825F57784A55B3DFE55B3 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01B719B003C46BC07D16E05 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DAA7FD9929A35A5D0021E76D /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
+		DAA7FD9C29A35BE80021E76D /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
+		DAA7FD9F29A35D140021E76D /* PixabayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayService.swift; sourceTree = "<group>"; };
+		DAA7FDA729A389630021E76D /* ImageDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailModel.swift; sourceTree = "<group>"; };
 		DAB3A20B29A0B3860043DDE9 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB3A20E29A0B3860043DDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB3A21029A0B3860043DDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,30 @@
 				08C8C09033F7C47EB6744240 /* Pods_DemoApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAA7FD9829A35A380021E76D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAA7FD9929A35A5D0021E76D /* MainPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAA7FD9B29A35BC80021E76D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAA7FD9C29A35BE80021E76D /* MainPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAA7FDA129A381910021E76D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAA7FDA729A389630021E76D /* ImageDetailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DAB3A20229A0B3860043DDE9 = {
@@ -156,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB3A23329A0C0380043DDE9 /* AuthService.swift */,
+				DAA7FD9F29A35D140021E76D /* PixabayService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,8 +207,9 @@
 		DAF1CAE229A21BC4004ED218 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				DAA7FD9829A35A380021E76D /* Model */,
+				DAA7FD9B29A35BC80021E76D /* ViewModel */,
 				DAF1CAE329A21C6D004ED218 /* View */,
-				DAF1CAE429A21C72004ED218 /* ViewModel */,
 				DAB3A21229A0B3860043DDE9 /* MainPageVC.swift */,
 			);
 			path = MainPage;
@@ -189,16 +223,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DAF1CAE429A21C72004ED218 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		DAF1CAE729A2230F004ED218 /* ImageDetail */ = {
 			isa = PBXGroup;
 			children = (
+				DAA7FDA129A381910021E76D /* Model */,
 				DAF1CAEA29A22403004ED218 /* View */,
 			);
 			path = ImageDetail;
@@ -333,6 +361,9 @@
 				DAB3A21329A0B3860043DDE9 /* MainPageVC.swift in Sources */,
 				DAB3A20F29A0B3860043DDE9 /* AppDelegate.swift in Sources */,
 				DAB3A22E29A0BC690043DDE9 /* AuthenticationViewModel.swift in Sources */,
+				DAA7FDA029A35D140021E76D /* PixabayService.swift in Sources */,
+				DAA7FDA829A389630021E76D /* ImageDetailModel.swift in Sources */,
+				DAA7FD9A29A35A5D0021E76D /* MainPageModel.swift in Sources */,
 				DAB3A23429A0C0380043DDE9 /* AuthService.swift in Sources */,
 				DAB3A23129A0BEDE0043DDE9 /* Extensions.swift in Sources */,
 				DAF1CAED29A225A0004ED218 /* ImageDetailCell.swift in Sources */,
@@ -341,6 +372,7 @@
 				DAB3A22C29A0BBE40043DDE9 /* CustomTextField.swift in Sources */,
 				DAB3A22629A0BB870043DDE9 /* LoginVC.swift in Sources */,
 				DAF1CAE929A22390004ED218 /* ImageDetailVC.swift in Sources */,
+				DAA7FD9D29A35BE80021E76D /* MainPageViewModel.swift in Sources */,
 				DAB3A22829A0BB950043DDE9 /* RegistrationVC.swift in Sources */,
 				DAB3A21129A0B3860043DDE9 /* SceneDelegate.swift in Sources */,
 			);

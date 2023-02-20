@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainPageCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class MainPageCell: UITableViewCell {
     private let mainImageView : UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -24,8 +26,8 @@ class MainPageCell: UITableViewCell {
     
     
 //MARK: - Helpers
-    func configureMainPageCellUI() {
-        
+    func configureMainPageCellUI(with model:MainPageModel) {
+ 
         self.addSubview(mainImageView)
         mainImageView.snp.makeConstraints { make in
             make.right.equalTo(-12)
@@ -40,6 +42,7 @@ class MainPageCell: UITableViewCell {
             make.top.equalTo(mainImageView.snp_bottomMargin).offset(12)
             make.left.equalToSuperview().offset(15)
         }
-        userNameLabel.text  = "aavtoris saxeli"
+        mainImageView.sd_setImage(with: URL(string: model.previewURL ?? ""))
+        userNameLabel.text  = model.user ?? ""
     }
 }
