@@ -13,7 +13,6 @@ class MainPageVC: UIViewController {
     private var tableView  :  UITableView!
     private var viewModel  = MainPageViewModel()
     
-    let web = URLs()
     
 //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -22,7 +21,6 @@ class MainPageVC: UIViewController {
         configureTableView()
         viewModel.outputs = self
         viewModel.inputs.fetchData()
-        web.main()
     }
     
     
@@ -63,6 +61,7 @@ extension MainPageVC : UITableViewDelegate , UITableViewDataSource {
         }
         let vc = ImageDetailVC()
         vc.viewModel = viewModel
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

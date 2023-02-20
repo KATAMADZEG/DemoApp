@@ -164,7 +164,7 @@ extension RegistrationVC : RegistrationViewModelOutputs {
         }
         
         let vc = MainPageVC()
-        self.view.window!.rootViewController = vc
+        view.window?.rootViewController = UINavigationController(rootViewController: vc)
 
     }
 }
